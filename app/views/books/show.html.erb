@@ -2,7 +2,7 @@
   <div class='row'>
     <div class='col-md-3'>
       <h2>User info</h2>
-      <%= render 'users/info', user: @book.user %> <!-- renderにbookに紐づく投稿者のインスタンスを引数として指定 --> 
+      <%= render 'users/info', user: @book.user %> <!-- renderにbookに紐づく投稿者のインスタンスを引数として指定 -->
       <h2 class="mt-3">New book</h2>
       <%= render 'form', book: @book_new %> <!-- renderに空のインスタンスを引数として指定 -->
     </div>
