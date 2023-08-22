@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   end
 
   def index
+    @book = Book.new  # 空のインスタンス変数を追加 
     @books = Book.all 
   end
 
@@ -41,6 +42,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title)
+    params.require(:book).permit(:title, :body)  # ストロングパラメータにbodyを追加
   end
 end
