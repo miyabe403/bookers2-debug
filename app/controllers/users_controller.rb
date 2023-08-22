@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)  
       redirect_to user_path(@user), notice: "You have updated user successfully."  # パスのusers_path(@user)の末尾のsを削除 
     else
-      render "edit" # render の遷移先をeditに指定
+      render "edit" # render の遷移先をeditに指定 
     end
   end
 
