@@ -35,7 +35,7 @@ class BooksController < ApplicationController
     end
   end
 
-  def delete
+  def destroy # delete のスペルミスを destroy に修正
     @book = Book.find(params[:id])
     @book.destroy  # destoy のスペルミスを destroy に修正
     redirect_to books_path
