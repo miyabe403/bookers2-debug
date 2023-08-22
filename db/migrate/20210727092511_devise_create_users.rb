@@ -33,6 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       # t.datetime :locked_at
 
       t.string :name
+      t.string :title  # カラムを追加 
       t.text :introduction
 
       t.timestamps null: false
