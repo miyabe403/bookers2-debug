@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :title, :introduction, :profile_image)  # title を追加
+    params.require(:user).permit(:name, :title, :introduction, :profile_image)  # title を追加 
   end
 
   def ensure_correct_user
