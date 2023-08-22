@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
   def ensure_correct_user
     @user = User.find(params[:id])
-    unless @user == current_user
+    unless @user.id == current_user.id # ログインしているユーザーのidをcurrent_user.idで取得
       redirect_to user_path(current_user)
     end
   end
