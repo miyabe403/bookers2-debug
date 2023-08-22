@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end # endを追加 
 
   def edit
-    @user = User.find(params[:id])  # インスタンス変数を追加 
+    @user = User.find(params[:id])  # インスタンス変数を追加
   end
 
   def update
