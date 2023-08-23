@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # belongs_to :books
-  has_many :books, dependent: :destroy 
   has_one_attached :profile_image
+  has_many :books, dependent: :destroy 
+  has_many :favorites, dependent: :destroy  # Userモデルにも追加
 
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
   validates :introduction, length: {maximum: 50}  # introductionカラムの追加 
