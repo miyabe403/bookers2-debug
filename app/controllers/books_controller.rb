@@ -2,7 +2,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @book_new = Book.new #空のインスタンスを用意 formの中身を空にする用
+    @book_new = Book.new #空のインスタンスを用意 formの中身を空にする用 
     @user = User.new  # 空のインスタンスを用意 部分テンプレートに渡す引数用
   end
 
