@@ -1,6 +1,6 @@
 class RelationshipsController < ApplicationController
   
-  # フォローするとき
+  # フォローするとき 
   def create
     current_user.follow(params[:user_id])
     redirect_to request.referer
