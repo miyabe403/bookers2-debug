@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :books, only: [:index,:show,:edit,:create,:destroy,:update] do
     resources :book_comments, only: [:create, :destroy] 
     resource :favorites, only: [:create, :destroy]
-  end
+  end 
   resources :users, only: [:index,:show,:edit,:update] do
     member do # memberとはresourcesで生成されるルートに、決められたルート以外のルートを追加するための処理
       get :follows, :followers
