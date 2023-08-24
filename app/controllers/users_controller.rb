@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @user = user.follower_users
   end
-
+ 
   private
 
   def user_params
