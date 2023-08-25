@@ -15,13 +15,13 @@ class Book < ApplicationRecord
   
   # 検索方法分岐
   def self.looks(search, word)
-    if search == "perfect_match"
-      @book = Book.where("title LIKE?","#{word}")
-    elsif search == "forward_match"
-      @book = Book.where("title LIKE?","#{word}%")
-    elsif search == "backward_match"
+    if search == "perfect_match"  # 完全一致 送られてきたsearchによって条件分岐
+      @book = Book.where("title LIKE?","#{word}") # whereメソッドを使いデータベースから該当データを取得し、変数に代入
+    elsif search == "forward_match"  # 前方一致
+      @book = Book.where("title LIKE?","#{word}%") # 完全一致以外の検索方法は、#{word}の前後(もしくは両方に)、%を追記することで定義
+    elsif search == "backward_match"  # 後方一致
       @book = Book.where("title LIKE?","%#{word}")
-    elsif search == "partial_match"
+    elsif search == "partial_match"  # 部分一致
       @book = Book.where("title LIKE?","%#{word}%")
     else
       @book = Book.all
