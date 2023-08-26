@@ -17,7 +17,7 @@
           </td>
           <td><%= link_to @book.title, @book %></td>
           <td><%= @book.body %></td>
-          <td id="favorite_buttons_<%= @book.id %>" > <!-- この箇所の更新を指定するために、変更したい箇所にidで名前をつける。 -->
+          <td id="favorite_buttons" > <!-- この箇所の更新を指定するために、変更したい箇所にidで名前をつける。 -->
             <%= render "favorites/favorite", book: @book %>
           </td>
           <% if @book.user == current_user %> <!-- if式でもし、『本の投稿をしたユーザーと現在ログインしているユーザーが一致していたら』 --> 
