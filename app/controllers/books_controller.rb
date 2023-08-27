@@ -7,7 +7,7 @@ class BooksController < ApplicationController
     end
     @book_new = Book.new #空のインスタンスを用意 formの中身を空にする用 
     @user = @book.user  # 空のインスタンスを用意 部分テンプレートに渡す引数用
-    @book_comment = BookComment.new
+    @book_comment = BookComment.new 
   end
 
   def index
