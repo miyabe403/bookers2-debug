@@ -10,6 +10,7 @@ class BooksController < ApplicationController
   def index
     @book = Book.new  # 空のインスタンス変数を追加 
     @books = Book.all 
+    
   end
 
   def create
