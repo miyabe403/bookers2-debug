@@ -24,6 +24,10 @@ class User < ApplicationRecord
   
   #この結果、@user.yyyとすることでそのユーザーがフォローしている人orフォローされている人の一覧を表示することができるようになります。
 
+  has_many :user_rooms
+  has_many :chats
+  has_many :rooms, through: :user_rooms
+
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
   validates :introduction, length: {maximum: 50}  # introductionカラムの追加 
 
@@ -59,7 +63,7 @@ class User < ApplicationRecord
     elsif search == "partial_match"
       @user = User.where("name LIKE?","%#{word}%")
     else
-      @user = User
+      @user = User.all
     end
   end
 end
