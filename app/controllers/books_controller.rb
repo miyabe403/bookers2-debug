@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    to = Time.current.at_end_of_day # toで今日の日付を獲得  
+    to = Time.current.at_end_of_day # toで今日の日付を獲得 
     from = (to - 6.day).at_beginning_of_day # fromで今日から6日間さかのぼり合計7日間の範囲を作成
     @books_sort = Book.includes(:favorites).sort_by {|x| x.favorites.where(created_at: from...to).size}.reverse # sortをかけてあげれば並び替えが完了
     @book = Book.new  # 空のインスタンス変数を追加 
