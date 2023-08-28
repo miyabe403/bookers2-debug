@@ -17,10 +17,13 @@
         <td><%= link_to book.title,book %></td>
         <td><%= book.body %></td>
         
-        <!-- 部分テンプレートにした箇所(部分的に更新したい箇所) いいね機能ajax-partial -->
-        <td id="favorite_buttons"> <!-- この箇所の更新を指定するために、変更したい箇所にidで名前をつけます。 -->
-            <%= render "favorites/favorite", book: book %> <!-- eachメソッド内でのrender処理なので、インスタンス変数は存在しません。bookをbookに渡しています。-->
+        <td class=<%= "favorite-" + book.id.to_s %> >
+          <%= render "favorites/btn", book: book %>
         </td>
+        <!-- 部分テンプレートにした箇所(部分的に更新したい箇所) いいね機能ajax-partial -->
+        <!--<td id="favorite_buttons"> <!-- この箇所の更新を指定するために、変更したい箇所にidで名前をつけます。 -->
+        <!--    %= render "favorites/favorite", book: book %> <!-- eachメソッド内でのrender処理なので、インスタンス変数は存在しません。bookをbookに渡しています。-->
+        <!--</td>-->
         <td><p><span id="comment_count"><%= link_to "#{book.book_comments.count} コメント", book_path(book.id) %></span></p></td> 
       </tr>
     <% end %>
