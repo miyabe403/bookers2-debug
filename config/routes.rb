@@ -10,10 +10,9 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end 
   resources :users, only: [:index,:show,:edit,:update] do
-    member do # memberとはresourcesで生成されるルートに、決められたルート以外のルートを追加するための処理
-      get :follows, :followers
-    end # Userと、Relationshipは関連づけられているためuserのidが必要なのでrelationshipsをネストする。
-      resource :relationships, only: [:create, :destroy]
+    resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers'
   end
   
   resources :chats, only: [:show, :create]
