@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @book = Book.new
     
     # Bookモデルで作成した scopeを利用して、それぞれのデータをわかりやすい名前に代入
-    @today_book = @books.created_today 
+    @today_book = @books.created_today  
     @yesterday_book = @books.created_yesterday
     @this_week_book = @books.created_this_week
     @last_week_book = @books.created_last_week
