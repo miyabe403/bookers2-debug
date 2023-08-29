@@ -14,7 +14,7 @@ class Book < ApplicationRecord
   
   scope :created_today, -> { where(created_at: Time.zone.now.all_day) } # 今日1日で作成した 全Bookを取得  
   scope :created_yesterday, -> { where(created_at: 1.day.ago.all_day) } # 昨日1日で作成した 全Bookを取得
-  scope :created_2day_ago, -> { where(created_at: 2.day.ago.all_day) } # 2日前 
+  scope :created_2day_ago, -> { where(created_at: 2.day.ago.all_day) } # 2日前  
   scope :created_3day_ago, -> { where(created_at: 3.day.ago.all_day) } # 3日前
   scope :created_4day_ago, -> { where(created_at: 4.day.ago.all_day) } # 4日前
   scope :created_5day_ago, -> { where(created_at: 5.day.ago.all_day) } # 5日前
