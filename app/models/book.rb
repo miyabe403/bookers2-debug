@@ -12,7 +12,7 @@ class Book < ApplicationRecord
   validates :title,presence:true
   validates :body,presence:true,length:{maximum:200}
   
-  scope :created_today, -> { where(created_at: Time.zone.now.all_day) } # 今日1日で作成した 全Bookを取得 
+  scope :created_today, -> { where(created_at: Time.zone.now.all_day) } # 今日1日で作成した 全Bookを取得  
   scope :created_yesterday, -> { where(created_at: 1.day.ago.all_day) } # 昨日1日で作成した 全Bookを取得
   scope :created_2day_ago, -> { where(created_at: 2.day.ago.all_day) } # 2日前
   scope :created_3day_ago, -> { where(created_at: 3.day.ago.all_day) } # 3日前
