@@ -26,11 +26,11 @@
           <!--<td id="favorite_buttons" > <!-- この箇所の更新を指定するために、変更したい箇所にidで名前をつける。 -->
           <!--  %= render "favorites/favorite", book: @book %>-->
           <!--</td>-->
+          <td class="view-count">閲覧数: <%= @book.view_counts.count %></td>
           <% if @book.user == current_user %> <!-- if式でもし、『本の投稿をしたユーザーと現在ログインしているユーザーが一致していたら』 --> 
             <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
             <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger"%></td>
           <% end %>
-          <td>閲覧数: <%= @book.view_counts.count %></td>
         </tr>
       </table>
       

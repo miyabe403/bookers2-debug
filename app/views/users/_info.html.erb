@@ -16,11 +16,6 @@
     <th>followers</th>
     <th><%= link_to user.followers.count, user_followers_path(user) %></th>
   </tr>
-  <td>
-  <% if current_user != user && current_user.following?(user) && user.following?(current_user) %>
-    <%= link_to 'チャットを始める', chat_path(user.id), class: "ml-3" %>
-  <% end %>
-</td>
 </table>
 
 <!--<table class='table'>-->
@@ -74,6 +69,10 @@
     <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
       <i class="fas fa-user-cog"></i>
     <% end %>
+  <% end %>
+  
+  <% if current_user != user && current_user.following?(user) && user.following?(current_user) %>
+    <%= link_to 'chatを始める', chat_path(user.id), class: "ml-3" %>
   <% end %>
 </div>
 
