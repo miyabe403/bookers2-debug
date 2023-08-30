@@ -1,7 +1,7 @@
 class GroupUsersController < ApplicationController
   before_action :authenticate_user!
 
-  def create
+  def create 
     group_user = current_user.group_users.new(group_id: params[:group_id])
     group_user.save
     redirect_to request.referer
