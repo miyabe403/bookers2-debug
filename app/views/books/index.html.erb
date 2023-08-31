@@ -1,6 +1,8 @@
 <div class='container px-5 px-sm-0'>
+  <!--%= render 'searches/search', user: current_user %>-->
   <div class='row'>
     <div class='col-md-3'>
+      
       <h2>User info</h2>
       <%= render 'layouts/errors', obj: @book %> <!-- 部分テンプレートでエラーメッセージを表示 -->
       <%= render 'users/info', user: current_user %>
@@ -8,8 +10,13 @@
       <%= render 'form', book: @book %>
     </div>
     <div class='col-md-8 offset-md-1'>
-      <%= render 'searches/search', user: current_user %>
+      <!--% if user_signed_in? %>-->
+      <!--  　　%= render 'tagsearches/tagsearch' %>-->
+      <!--  % end %>-->
       <h2>Books</h2>
+      <%= link_to '新しい順', books_path(latest: "true") %>
+      |<%= link_to '古い順', books_path(old: "true") %>
+      |<%= link_to '評価の高い順', books_path(star_count: "true") %>
       <%= render 'index', books: @books%>
     </div>
   </div>

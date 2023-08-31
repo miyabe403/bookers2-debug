@@ -19,6 +19,16 @@ class BooksController < ApplicationController
     }
     @book = Book.new  # 空のインスタンス変数を追加 
     
+    if params[:latest]
+      @books = Book.latest
+    elsif params[:old]
+      @books = Book.old
+    elsif params[:star_count]
+      @books = Book.star_count
+    else
+      @books = Book.all
+    end
+    
     # @books_sort = Book.includes(:favorites).sort_by {|x| x.favorites.where(created_at: from...to).size}.reverse # sortをかけてあげれば並び替えが完了
     # @books = Book.all 
   end
@@ -56,6 +66,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)  # ストロングパラメータにbodyを追加 
+    params.require(:book).permit(:title, :body, :image, :star, :category)  # ストロングパラメータにbodyを追加 
   end
 end
