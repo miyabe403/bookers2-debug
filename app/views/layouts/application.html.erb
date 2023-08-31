@@ -14,8 +14,8 @@
     <%= render 'layouts/header' %>
     
     <% if user_signed_in? %>
-        　　<%= render 'searches/search', user: current_user %><%= render 'tagsearches/tagsearch' %>
-        <% end %>
+    　　<%= render 'searches/search', user: current_user %><%= render 'tagsearches/tagsearch' %>
+    <% end %>
       <main>
         <p id="notice"><%= notice %></p>
         <%= yield %> 
