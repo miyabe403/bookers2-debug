@@ -56,6 +56,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
+# bootstrap をインストール 
+gem 'bootstrap5-kaminari-views', '~> 0.0.1'
+
 gem 'jquery-rails'
 
 gem 'dotenv-rails'  
