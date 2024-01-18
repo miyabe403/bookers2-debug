@@ -69,3 +69,6 @@ gem 'net-pop'
 gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
+
+gem 'puma-daemon', require: false
+gem 'puma',  '~> 5'
