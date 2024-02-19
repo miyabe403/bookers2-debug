@@ -56,13 +56,14 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # devise をインストール 
 gem 'devise'
+# kaminari をインストール 
+gem 'kaminari','~> 1.2.1'
+# bootstrap をインストール 
+gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 
 gem 'jquery-rails'
 
-gem 'dotenv-rails'  
-group :production do
-  gem 'mysql2'
-end
+gem 'dotenv-rails'
 
 gem 'net-pop'
 
